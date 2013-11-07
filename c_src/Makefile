@@ -2,9 +2,7 @@ LINUX=$(shell uname | grep Linux | wc -l | xargs echo)
 DEPS=../deps
 
 ifeq ($(LINUX),1)
-ZMQ_FLAGS=--with-pic
-else
-ZMQ_FLAGS=
+ZMQ_FLAGS += --with-pic
 endif
 
 ifndef ZEROMQ_VERSION
